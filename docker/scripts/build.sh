@@ -4,11 +4,11 @@ if [ $# -eq 0 ]
         echo "No Infura project id found, please specify it."
     else
         # Removing previous folders
-        sudo rm -rf provider-cli/rpp
-        sudo rm -rf referee-cli/rpp
-        sudo rm ./provider-cli/.env
-        sudo rm ./referee-cli/.env
-        
+        rm -rf provider-cli/rpp
+        rm -rf referee-cli/rpp
+        rm ./provider-cli/.env
+        rm ./referee-cli/.env
+
         # Create .env files
         cp ./provider-cli/.env.goerli ./provider-cli/.env
         cp ./referee-cli/.env.goerli ./referee-cli/.env
@@ -17,7 +17,7 @@ if [ $# -eq 0 ]
 
         # Building docker
         cd docker && docker build -t rpp .
-        sudo rm -rf .ipfs
+        rm -rf .ipfs
         cd ..
 
         # Running docker

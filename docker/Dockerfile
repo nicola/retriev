@@ -1,4 +1,4 @@
-FROM ubuntu:20.04 
+FROM ubuntu:22.04 
 
 # INSTALL BASIC DEPENDENCIES
 RUN apt-get -qq update
@@ -10,7 +10,7 @@ RUN apt-get install -y \
   wget
   
 # INSTALL NODEJS
-RUN curl -q https://deb.nodesource.com/setup_14.x | bash -
+RUN curl -q https://deb.nodesource.com/setup_20.x | bash -
 RUN apt-get update
 RUN apt-get install -y nodejs
 RUN npm install -g npm
